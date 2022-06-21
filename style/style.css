@@ -1,0 +1,75 @@
+:root {
+  --grey: #808080;
+  --blue: #0000ff;
+  --light-blue: #00aaa9;
+}
+
+.desktop {
+  width: 100vw;
+  height: 94vh;
+  background-color: var(--light-blue);
+  padding: 0 10px 0 10px;
+  box-sizing: border-box;
+}
+
+/* app */
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  width: 5vw;
+  text-align: center;
+}
+.app_icon {
+  height: 6vh;
+  width: 3vw;
+}
+.app_name {
+  text-decoration: none;
+  color: black;
+}
+.iten_button {
+  width: 5vw;
+  height: 8vh;
+  border: none;
+  background-color: transparent;
+}
+.iten_button:hover {
+  cursor: pointer;
+}
+
+/* Explorer Bar */
+.explorer_bar {
+  height: 6vh;
+  background-color: var(--grey);
+  box-sizing: border-box;
+  padding: 5px;
+  display: flex;
+}
+.start_button {
+  display: flex;
+}
+.win_button {
+  width: 10vw;
+  height: 5vh;
+}
+
+.win_logo_explorer_bar {
+  width: 2vw;
+  height: 4vh;
+}
+.win_icon {
+  width: 2vw;
+  height: 3vh;
+}
+.start {
+  display: inline;
+  font-size: 18px;
+}
+.space {
+  width: 2px;
+  height: 35px;
+  background-color: black;
+  margin-left: 5px;
+}
