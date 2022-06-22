@@ -19,7 +19,7 @@
               alt="desktop"
               class="app_icon"
             />
-            <span class="app_name">Menu</span>
+            <a href="#"><span class="app_name">Menu</span></a>
           </a>
         </div>
       </div>
@@ -27,7 +27,7 @@
 
     <footer class="explorer_bar">
       <div class="start_button">
-        <button class="win_button">
+        <button class="win_button" id="start_btn">
           <img
             src="./image/windows_logo.png"
             alt="windows_icon"
@@ -36,12 +36,16 @@
           <p class="start">Iniciar</p>
         </button>
       </div>
-      <div class="open_pages"></div>
+      <div class="start_menu" id="start_meun">
+        
+      </div>
       <div class="space"></div>
-      <button pressed class="credit">
+      <div class="open_pages"></div>
+      <button class="credit">
         <p>Desenvolvido por</p>
         <p>Lucas Bertolini</p>
       </button>
     </footer>
+    <script src="./main.js"></script>
   </body>
 </html>

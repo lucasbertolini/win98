@@ -3,7 +3,6 @@
   --blue: #0000ff;
   --light-blue: #00aaa9;
 }
-
 .desktop {
   width: 100vw;
   height: 94vh;
@@ -11,7 +10,6 @@
   padding: 0 10px 0 10px;
   box-sizing: border-box;
 }
-
 /* app */
 .items {
   display: flex;
@@ -38,7 +36,6 @@
 .iten_button:hover {
   cursor: pointer;
 }
-
 /* Explorer Bar */
 .explorer_bar {
   height: 6vh;
@@ -51,10 +48,9 @@
   display: flex;
 }
 .win_button {
-  width: 10vw;
+  width: 6vw;
   height: 5vh;
 }
-
 .win_logo_explorer_bar {
   width: 2vw;
   height: 4vh;
@@ -69,7 +65,10 @@
 }
 .space {
   width: 2px;
-  height: 35px;
+  height: 50px;
   background-color: black;
   margin-left: 5px;
+}
+.open_pages {
+  width:90vw;
 }
