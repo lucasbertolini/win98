@@ -52,6 +52,7 @@
 .win_button {
   width: 6vw;
   height: 5vh;
+  align-items:center;
 }
 .win_logo_explorer_bar {
   width: 2vw;
@@ -81,17 +82,30 @@
   position:fixed;
   height: 300px;
   width:200px;
-  bottom: 55px;
+  bottom: 56px;
+  left:2px;
   display:flex; 
+  padding:0 0 4px 4px;
 }
 .start_menu_left_bar {
-  height:20px;
-  background-color:#0000ff;
+  background: linear-gradient(360deg,navy,#1084d0);
   height: 300px;
+  width:40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:center;
+  padding-bottom: 5px;
+}
+.left_bar_text {
+  font-weight:bold;
+  font-size:18px;
+  color:white;
 }
 .start_menu_itens {
   display:flex;
   flex-direction:column;
+  width:90%;
 }
 .start_menu_item {
   padding: 10px 0 10px 0;
@@ -101,8 +115,26 @@
 }
 
 .arrow_right {
-  margin-left:70%;
+  margin-left:60%;
+  font-weight:bold;
 }
+
+
+/* App window*/
+.app_window {
+  width: 80%;
+  height:80%;
+  margin: 0 auto;
+}
+/*App window for calculator*/
+
+.app_window {
+  width: 20%;
+  height: 20%;
+}
+/* calculator */
+
+
 
 /*DISABLE DISPLAY VIEW*/
 .disabled {

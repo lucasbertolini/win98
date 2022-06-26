@@ -22,11 +22,50 @@
             <a href="#"><span class="app_name">Menu</span></a>
           </a>
         </div>
+        <div class="app_window" id="app_window">
+          <div class="window">
+            <div class="title-bar">
+              <div class="title-bar-text">Calculadora</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize" id="minimaze"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" id="close"></button>
+              </div>
+            </div>
+            <div class="window-body">
+              <main class="container">
+                <div class="calculadora__principal" id="calculadora__principal">
+                    <input type="text" readonly class="calculadora__pricipal--mostrador" id="calculadora__principal--mostrador"></input>
+                    <button class="numero clear">C</button>
+                    <button id="button" class="numero">7</button>
+                    <button id="button" class="numero">8</button>
+                    <button id="button" class="numero">9</button>
+                    <button id="button" class="numero">+</button>
+                    <button id="button" class="numero">4</button>
+                    <button id="button" class="numero">5</button>
+                    <button id="button" class="numero">6</button>
+                    <button id="button" class="numero">-</button>
+                    <button id="button" class="numero">1</button>
+                    <button id="button" class="numero">2</button>
+                    <button id="button" class="numero">3</button>
+                    <button id="button" class="numero">*</button>
+                    <button id="button" class="numero">0</button>
+                    <button id="button" class="numero">.</button>
+                    <button id="button" class="numero">=</button>
+                    <button id="button" class="numero">/</button>
+                    
+                </div>
+            </main>
+            </div>
+          </div>
+          </div>
+          
+        </div>
       </div>
     </main>
 
     <footer class="explorer_bar">
-      <div class="start_button">
+      <div class="start_button" id="start_button">
         <button class="win_button" id="start_btn">
           <img
             src="./image/windows_logo.png"
@@ -36,14 +75,22 @@
           <p class="start">Iniciar</p>
         </button>
       </div>
-      </div>
-      <div class="start_menu" id="start_menu">
-        <div class="start_menu_left_bar"></div>
+      <div class="start_menu disabled" id="start_menu">
+        <div class="start_menu_left_bar">
+          <span class="left_bar_text">L</span>
+          <span class="left_bar_text">U</span>
+          <span class="left_bar_text">C</span>
+          <span class="left_bar_text">A</span>
+          <span class="left_bar_text">S</span>
+          <span class="left_bar_text">9</span>
+          <span class="left_bar_text">8</span>
+        </div>
         <div class="start_menu_itens">
-          <span class="start_menu_item">Projetos <span class="arrow_right">></span></span>
+          <span class="start_menu_item">Projetos</span>
           <span class="start_menu_item">Contato</span>
         </div>
       </div>
+      
       <div class="space"></div>
       <div class="open_pages"></div>
       <button class="credit">
@@ -52,5 +99,6 @@
       </button>
     </footer>
     <script src="./main.js"></script>
+    <script src="./Projects/Calculadora/main.js"></script>
   </body>
 </html>
