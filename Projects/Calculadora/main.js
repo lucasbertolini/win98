@@ -1,6 +1,4 @@
 
-//para fazer: o botão do ponto ainda não funciona. 
-
 const calculadora = document.querySelector('#calculadora__principal');
 const exibeValor = document.querySelector('#calculadora__principal--mostrador');
 
@@ -18,7 +16,7 @@ calculadora.addEventListener('click', (evento) =>{
     const valorSelecionado = evento.target.textContent;
     
 
-    //não deixa clicar na div de resultado
+    //não deixa clicar no campo de resultado
     if(evento.target.id == 'calculadora__principal--mostrador'){ 
         return
     }
@@ -28,6 +26,7 @@ calculadora.addEventListener('click', (evento) =>{
         switch(valorSelecionado){
             case "+":
                 valorAntigo = parseFloat(exibeValor.value);
+                console.log(exibeValor.value);
                 exibeValor.value = '';
                 somar = true;
                 break;
@@ -58,20 +57,20 @@ calculadora.addEventListener('click', (evento) =>{
 
     }else if(valorSelecionado == '='){ //concluir operação da calculadora
         if(somar){
-            exibeValor.textContent = valorAntigo + valorAtual;
+            exibeValor.value = valorAntigo + valorAtual;
             console.log(`valor atual ${valorAtual} \nvalor antigo ${valorAntigo} \nResultado ${exibeValor.textContent + parseInt('.')}`);
             somar = false;
             return
         }else if(multiplicar){
-            exibeValor.textContent = valorAntigo * valorAtual;
+            exibeValor.value = valorAntigo * valorAtual;
             multiplicar = false;
             return 
         }else if(dividir){
-            exibeValor.textContent = valorAntigo / valorAtual;
+            exibeValor.value = valorAntigo / valorAtual;
             dividir = false;
             return
         }else if(subtrair){
-            exibeValor.textContent = valorAntigo - valorAtual;
+            exibeValor.value = valorAntigo - valorAtual;
             subtrair = false;
             return
         }
@@ -99,7 +98,7 @@ calculadora.addEventListener('click', (evento) =>{
     }
     valorAtual = parseFloat(valorSelecionado);
     exibeValor.value += valorAtual; 
-    valorAtual = parseFloat(exibeValor.innerHTML);
+    valorAtual = parseFloat(exibeValor.value);
 
    
    console.log(`valor atual ${valorAtual} \nvalor antigo ${valorAntigo} \nResultado ${exibeValor.textContent}`);

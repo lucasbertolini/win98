@@ -134,8 +134,15 @@
 }
 /* calculator */
 
+.calculadora__pricipal--mostrador {
+  width:100%;
+  text-align:end;
+}
 
+.calculator_buttons {
+  padding: 10px 20px 0 20px;
 
+}
 /*DISABLE DISPLAY VIEW*/
 .disabled {
   display:none;
