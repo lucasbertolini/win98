@@ -125,7 +125,7 @@
   font-weight: bold;
 }
 
-/* App window*/
+/* App window*
 .app_window {
   width: 80%;
   height: 80%;
@@ -169,4 +169,7 @@ textarea {
 /*DISABLE DISPLAY VIEW*/
 .disabled {
   display: none;
+}
+.enable {
+  display: block;
 }

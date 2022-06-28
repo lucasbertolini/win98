@@ -11,7 +11,7 @@
   </head>
   <body>
     <main>
-      <div class="desktop">
+      <div class="desktop" id="desktop">
         <div class="items">
           <a href="#"
             ><img
@@ -22,14 +22,14 @@
             <a href="#"><span class="app_name">Menu</span></a>
           </a>
         </div>
-        <div class="app_window" id="app_window">
-          <div class="window">
+        <div class="app_window disabled" id="app_window_calculator">
+          <div class="window" id="window">
             <div class="title-bar">
               <div class="title-bar-text">Calculadora</div>
               <div class="title-bar-controls">
                 <button aria-label="Minimize" id="minimaze"></button>
                 <button aria-label="Maximize"></button>
-                <button aria-label="Close" id="close"></button>
+                <button aria-label="Close" id="app_window_calculator"></button>
               </div>
             </div>
             <div class="window-body">
@@ -92,6 +92,7 @@
         <div class="start_menu_itens">
           <span class="start_menu_item">Projetos</span>
           <span class="start_menu_item">Contato</span>
+          <span class="start_menu_item" id="start_menu_calculator">Calculadora</span>
         </div>
       </div>
       

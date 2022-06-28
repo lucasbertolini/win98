@@ -58,18 +58,18 @@ calculadora.addEventListener('click', (evento) =>{
 
     }else if(valorSelecionado == 'Backspace'){
         let valor;
-        let valorString = valorAtual.toString()
+        let valorString = valorAtual.toString();
         let stringFinal = new String;
         valor = valorString.split("");
-        valor.pop()
+        valor.pop();
+        if(!valor.includes('.')) {
+            ponto = false;
+        }
         for (let i = 0; i < valor.length ; i++) {
             stringFinal +=  valor[i];
         }
-        if(!stringFinal.includes('.')) {
-            ponto = false;
-        }
         exibeValor.value = parseFloat(stringFinal);
-        
+        return  
         
     }else if(valorSelecionado == '='){
          //concluir operação da calculadora
@@ -110,12 +110,12 @@ calculadora.addEventListener('click', (evento) =>{
         }
         console.error('Clique em um número')
         return
-    }else if (valorSelecionado != 'Backspace') {
-        //condição para o backspace não retornar NaN
-        valorAtual = parseFloat(valorSelecionado);
-        exibeValor.value += valorAtual; 
-        valorAtual = parseFloat(exibeValor.value);
     }
+    //condição para o backspace não retornar NaN
+    valorAtual = parseFloat(valorSelecionado);
+    exibeValor.value += valorAtual; 
+    valorAtual = parseFloat(exibeValor.value);
+
 
 
    
