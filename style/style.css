@@ -3,6 +3,7 @@
   --blue: #0000ff;
   --light-blue: #00aaa9;
 }
+
 .desktop {
   width: 100vw;
   height: 94vh;
@@ -50,10 +51,15 @@
   display: flex;
 }
 .win_button {
-  width: 6vw;
+  width: 100px;
   height: 5vh;
-  align-items:center;
+  display: flex;
+  align-items: center;
 }
+.start {
+  margin-left: 5px;
+}
+
 .win_logo_explorer_bar {
   width: 2vw;
   height: 4vh;
@@ -68,44 +74,44 @@
 }
 .space {
   width: 2px;
-  height: 50px;
-  background-color: rgba(211, 211, 211, 0.527);
+  height: 35px;
+  background-color: black;
   margin-left: 5px;
 }
 .open_pages {
-  width:90vw;
+  width: 90%;
 }
 
 /* Start menu */
 .start_menu {
-  background-color:white;
-  position:fixed;
+  background-color: white;
+  position: fixed;
   height: 300px;
-  width:200px;
+  width: 200px;
   bottom: 56px;
-  left:2px;
-  display:flex; 
-  padding:0 0 4px 4px;
+  left: 2px;
+  display: flex;
+  padding: 0 0 4px 4px;
 }
 .start_menu_left_bar {
-  background: linear-gradient(360deg,navy,#1084d0);
+  background: linear-gradient(360deg, navy, #1084d0);
   height: 300px;
-  width:40px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  align-items:center;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   padding-bottom: 5px;
 }
 .left_bar_text {
-  font-weight:bold;
-  font-size:18px;
-  color:white;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
 }
 .start_menu_itens {
-  display:flex;
-  flex-direction:column;
-  width:90%;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
 }
 .start_menu_item {
   padding: 10px 0 10px 0;
@@ -115,15 +121,14 @@
 }
 
 .arrow_right {
-  margin-left:60%;
-  font-weight:bold;
+  margin-left: 60%;
+  font-weight: bold;
 }
-
 
 /* App window*/
 .app_window {
   width: 80%;
-  height:80%;
+  height: 80%;
   margin: 0 auto;
 }
 /*App window for calculator*/
@@ -135,15 +140,33 @@
 /* calculator */
 
 .calculadora__pricipal--mostrador {
-  width:100%;
-  text-align:end;
+  width: 100%;
+  text-align: end;
+  min-height: 40px;
+  font-size: 18px;
 }
-
 .calculator_buttons {
   padding: 10px 20px 0 20px;
-
 }
+.calculator_buttons button {
+  min-width: 50px;
+  min-height: 50px;
+  font-size: 18px;
+}
+.calculadora__pricipal input[type="text"],
+textarea {
+  background: white;
+}
+.clearButton {
+  margin: 0 0 3px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+.clearButton button {
+  min-width: 95px;
+}
+
 /*DISABLE DISPLAY VIEW*/
 .disabled {
-  display:none;
+  display: none;
 }

@@ -1,6 +1,7 @@
 
 const calculadora = document.querySelector('#calculadora__principal');
 const exibeValor = document.querySelector('#calculadora__principal--mostrador');
+const bkspace = document.querySelector('#backspace');
 
 
 //variavéis para operação
@@ -55,7 +56,23 @@ calculadora.addEventListener('click', (evento) =>{
         ponto = false;
         return;
 
-    }else if(valorSelecionado == '='){ //concluir operação da calculadora
+    }else if(valorSelecionado == 'Backspace'){
+        let valor;
+        let valorString = valorAtual.toString()
+        let stringFinal = new String;
+        valor = valorString.split("");
+        valor.pop()
+        for (let i = 0; i < valor.length ; i++) {
+            stringFinal +=  valor[i];
+        }
+        if(!stringFinal.includes('.')) {
+            ponto = false;
+        }
+        exibeValor.value = parseFloat(stringFinal);
+        
+        
+    }else if(valorSelecionado == '='){
+         //concluir operação da calculadora
         if(somar){
             exibeValor.value = valorAntigo + valorAtual;
             console.log(`valor atual ${valorAtual} \nvalor antigo ${valorAntigo} \nResultado ${exibeValor.textContent + parseInt('.')}`);
@@ -74,7 +91,6 @@ calculadora.addEventListener('click', (evento) =>{
             subtrair = false;
             return
         }
-    
         //adiciona o ponto
     }else if(valorSelecionado == '.'){ 
         console.log(ponto);
@@ -84,9 +100,8 @@ calculadora.addEventListener('click', (evento) =>{
             exibeValor.value += '.';
         ponto = true;
         return
-
     }
-    if(!parseInt(valorSelecionado)){ //apenas números são clicavéis
+    if(!parseInt(valorSelecionado) && valorSelecionado != 'Backspace'){ //apenas números são clicavéis
         if(!parseInt(valorSelecionado) && parseInt(valorSelecionado) == 0 ){ //regra para o 0 funcionar corretamente
             valorAtual = parseInt(valorSelecionado);
             exibeValor.value += valorAtual; 
@@ -95,10 +110,13 @@ calculadora.addEventListener('click', (evento) =>{
         }
         console.error('Clique em um número')
         return
+    }else if (valorSelecionado != 'Backspace') {
+        //condição para o backspace não retornar NaN
+        valorAtual = parseFloat(valorSelecionado);
+        exibeValor.value += valorAtual; 
+        valorAtual = parseFloat(exibeValor.value);
     }
-    valorAtual = parseFloat(valorSelecionado);
-    exibeValor.value += valorAtual; 
-    valorAtual = parseFloat(exibeValor.value);
+
 
    
    console.log(`valor atual ${valorAtual} \nvalor antigo ${valorAntigo} \nResultado ${exibeValor.textContent}`);
