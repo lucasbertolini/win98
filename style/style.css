@@ -125,7 +125,7 @@
   font-weight: bold;
 }
 
-/* App window*
+/* App window*/
 .app_window {
   width: 80%;
   height: 80%;
@@ -138,7 +138,14 @@
   height: 20%;
 }
 /* calculator */
-
+.calculator {
+  width: 300px;
+  height: 230px;
+}
+.calculator_window {
+  width: 266px;
+  height: 350px;
+}
 .calculadora__pricipal--mostrador {
   width: 100%;
   text-align: end;
@@ -153,19 +160,16 @@
   min-height: 50px;
   font-size: 18px;
 }
-.calculadora__pricipal input[type="text"],
-textarea {
-  background: white;
-}
 .clearButton {
   margin: 0 0 3px 0;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  width: 98%;
 }
-.clearButton button {
-  min-width: 95px;
+.calculator_buttons .clearBtn,
+.calculator_buttons .backspace {
+  width: 101px;
 }
-
 /*DISABLE DISPLAY VIEW*/
 .disabled {
   display: none;

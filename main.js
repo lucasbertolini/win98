@@ -7,13 +7,11 @@ desktopClick.addEventListener('click', (e) => {
     };
 })
 
-
 //click on start menu button to show hidden menu 
 let startBtn = document.querySelector('#start_btn');
 startBtn.addEventListener('click', (event) =>{
     document.querySelector('#start_menu').classList.toggle('disabled');
 })
-
 
 //minimaze window
 let minimazeBtn = document.querySelector('#minimaze');

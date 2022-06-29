@@ -57,6 +57,7 @@ calculadora.addEventListener('click', (evento) =>{
         return;
 
     }else if(valorSelecionado == 'Backspace'){
+        if(valorAtual == '') return;
         let valor;
         let valorString = valorAtual.toString();
         let stringFinal = new String;
