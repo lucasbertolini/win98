@@ -57,11 +57,16 @@ calculadora.addEventListener('click', (evento) =>{
         return;
 
     }else if(valorSelecionado == 'Backspace'){
-        if(valorAtual == '') return;
-        let valor;
-        let valorString = valorAtual.toString();
+        if(valorAtual == '') return 
+        let valorString = exibeValor.value.toString();
+
+        if(valorString.length == 1) {
+            exibeValor.value = 0;
+            return
+        }
+
         let stringFinal = new String;
-        valor = valorString.split("");
+        let valor = valorString.split("");
         valor.pop();
         if(!valor.includes('.')) {
             ponto = false;
