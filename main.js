@@ -30,11 +30,24 @@ openCalculator.addEventListener('click', () => {
 
 //close window
 document.querySelector('#desktop').addEventListener('click', (e) => {
-    if(e.target.id == 'app_window_calculator') {
-        document.querySelector('#app_window_calculator').classList.toggle('enable');
-    };
-})
 
+    switch (e.target.id) {
+        case 'close_app_window_calculator':
+            document.querySelector('#app_window_calculator').classList.remove('enable');    
+            break;
+        case 'close_weather' :
+            document.querySelector('#app_window_weather').classList.add('disabled');
+            break;
+            default : 
+            console.log(e.target.id);
+            break;
+    }
+})
+//close weather app window
+let closeWeather = document.querySelector('#close_weather');
+closeWeather.addEventListener('click', () => {
+    
+})
 //start menu click
 document.querySelector('#start_menu').addEventListener('click', () => {
     document.querySelector('#start_menu').classList.toggle('disabled');

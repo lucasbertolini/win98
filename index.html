@@ -29,7 +29,7 @@
               <div class="title-bar-controls">
                 <button aria-label="Minimize" id="minimaze"></button>
                 <button aria-label="Maximize"></button>
-                <button aria-label="Close" id="app_window_calculator"></button>
+                <button aria-label="Close" id="close_app_window_calculator"></button>
               </div>
             </div>
             <div class="window-body">
@@ -63,24 +63,28 @@
             </div>
           </div>
         </div>
-        <div class="weather-app">
-          <div class="title-bar">
-            <div class="title-bar-text">Weather App</div>
-            <div class="title-bar-controls">
-              <button aria-label="Minimize"></button>
-              <button aria-label="Maximize"></button>
-              <button aria-label="Close"></button>
+        <div class="weather_app" id="app_window_weather">
+          <div class="window">
+            <div class="title-bar">
+              <div class="title-bar-text">Weather App</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close" id="close_weather"></button>
+              </div>
+            </div>
+            <div class="window-body">
+              <form>
+                <section class="container">
+                  <input type="text" class="input" placeholder="Digite o nome da cidade!" id="input">
+                  <input type="submit" class="submit" value="Procurar">
+                </section>
+              </form>
+              <section class="tempo"></section> 
             </div>
           </div>
-          <form>
-            <section class="container">
-              <input type="text" class="input" placeholder="Digite o nome da cidade!" id="input">
-              <input type="submit" class="submit" value="Procurar">
-            </section>
-          </form> 
-          <section class="tempo">
         </div>
-      </div>
+      </div>  
       </div>
     </main>
 
@@ -106,7 +110,7 @@
           <span class="left_bar_text">8</span>
         </div>
         <div class="start_menu_itens">
-          <span class="start_menu_item">Projetos</span>
+          <span class="start_menu_item" id="start_menu_weather">Weather App</span>
           <span class="start_menu_item">Contato</span>
           <span class="start_menu_item" id="start_menu_calculator">Calculadora</span>
         </div>

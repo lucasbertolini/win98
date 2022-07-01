@@ -170,7 +170,28 @@
 .calculator_buttons .backspace {
   width: 101px;
 }
-/*DISABLE DISPLAY VIEW*/
+/* WEATHER APP */
+ .weather_app {
+  width: 300px;
+  height:400px;
+ }
+.tempo {
+  display:flex;
+  flex-wrap:wrap;
+}
+.cidade {
+  margin: 10px;
+  border: 2px solid black;
+  padding: 5px;
+  font-size:17px;
+  text-align:center;
+}
+.weather_app .container {
+  text-align:center;
+}
+
+
+/*CHANGE DISPLAY VIEW*/
 .disabled {
   display: none;
 }
