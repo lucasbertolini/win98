@@ -30,8 +30,8 @@ document.querySelector('#desktop').addEventListener('click', (e) => {
             break;
         case 'close_weather' :
             document.querySelector('#app_window_weather').classList.remove('enable');
-
             break;
+
             default : 
             console.log(e.target.id);
             break;
