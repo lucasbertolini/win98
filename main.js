@@ -21,13 +21,6 @@ minimazeBtn.addEventListener('click', (e) => {
     addToBar(e.target.textContent);
 });
 
-//open calulator window
-let openCalculator = document.querySelector('#start_menu_calculator');
-openCalculator.addEventListener('click', () => {
-
-    document.querySelector('#app_window_calculator').classList.toggle('enable');
-});
-
 //close window
 document.querySelector('#desktop').addEventListener('click', (e) => {
 
@@ -36,22 +29,39 @@ document.querySelector('#desktop').addEventListener('click', (e) => {
             document.querySelector('#app_window_calculator').classList.remove('enable');    
             break;
         case 'close_weather' :
-            document.querySelector('#app_window_weather').classList.add('disabled');
+            document.querySelector('#app_window_weather').classList.remove('enable');
+
             break;
             default : 
             console.log(e.target.id);
             break;
     }
 })
-//close weather app window
-let closeWeather = document.querySelector('#close_weather');
-closeWeather.addEventListener('click', () => {
-    
-})
+
 //start menu click
-document.querySelector('#start_menu').addEventListener('click', () => {
+let start_menu_button = document.querySelector('#start_menu');
+start_menu_button.addEventListener('click', (e) => {
+
+    //switch for each button inside start menu
+    switch (e.target.id) {
+        case 'start_menu_weather':
+
+            document.querySelector('#app_window_weather').classList.add('enable');
+            closeStartMenu();
+            break;
+        case 'start_menu_calculator':
+            document.querySelector('#app_window_calculator').classList.add('enable');
+            closeStartMenu();
+            break
+        default:
+            closeStartMenu();
+            break;
+    }
+});
+
+function closeStartMenu() {
     document.querySelector('#start_menu').classList.toggle('disabled');
-})
+}
 
 function addToBar(nome) {
     obejctCreate(nome);
