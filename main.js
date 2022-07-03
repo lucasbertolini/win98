@@ -31,8 +31,11 @@ document.querySelector('#desktop').addEventListener('click', (e) => {
         case 'close_weather' :
             document.querySelector('#app_window_weather').classList.remove('enable');
             break;
+        case 'close_cep' :
+            document.querySelector('#app_window_cep').classList.remove('enable');
+            break;
 
-            default : 
+        default : 
             console.log(e.target.id);
             break;
     }
@@ -53,6 +56,11 @@ start_menu_button.addEventListener('click', (e) => {
             document.querySelector('#app_window_calculator').classList.add('enable');
             closeStartMenu();
             break
+
+        case 'start_menu_cep_search':
+            document.querySelector('#app_window_cep').classList.add('enable');
+            closeStartMenu();
+            break;
         default:
             closeStartMenu();
             break;

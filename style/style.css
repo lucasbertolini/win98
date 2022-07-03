@@ -80,6 +80,16 @@
 }
 .open_pages {
   width: 90%;
+  padding: 0 5px 0 5px;
+}
+.open_app_tab {
+  width: 150px;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border: 2px dashed silver;
 }
 
 /* Start menu */
