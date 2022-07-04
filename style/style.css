@@ -1,3 +1,7 @@
+@import url("../Projects/Cep/style.css");
+@import url("../Projects/Calculadora/style.css");
+@import url("../Projects/Tempo/style.css");
+
 :root {
   --grey: #808080;
   --blue: #0000ff;
@@ -42,7 +46,7 @@
 /* Explorer Bar */
 .explorer_bar {
   height: 6vh;
-  background-color: var(--grey);
+  background-color: silver;
   box-sizing: border-box;
   padding: 5px;
   display: flex;
@@ -81,15 +85,31 @@
 .open_pages {
   width: 90%;
   padding: 0 5px 0 5px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
 }
 .open_app_tab {
-  width: 150px;
+  max-width: 200px;
   height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  border: 2px dashed silver;
+  font-weight: bold;
+  background-color: #d9d9d9;
+  box-shadow: inset 4px 4px 0px -1px rgba(0, 0, 0, 0.25),
+    inset -7px -7px 0px -3px rgba(251, 246, 246, 0.57);
+}
+.credit {
+  box-shadow: inset 4px 4px 0px -2px rgba(0, 0, 0, 0.25),
+    inset -7px -7px 0px -6px rgba(251, 246, 246, 0.57);
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
 }
 
 /* Start menu */
@@ -141,103 +161,6 @@
   height: 80%;
   margin: 0 auto;
 }
-/*App window for calculator*/
-
-.app_window {
-  width: 20%;
-  height: 20%;
-}
-/* calculator */
-.calculator {
-  width: 300px;
-  height: 230px;
-}
-.calculator_window {
-  width: 266px;
-  height: 350px;
-}
-.calculadora__pricipal--mostrador {
-  width: 100%;
-  text-align: end;
-  min-height: 40px;
-  font-size: 18px;
-}
-.calculator_buttons {
-  padding: 10px 20px 0 20px;
-}
-.calculator_buttons button {
-  min-width: 50px;
-  min-height: 50px;
-  font-size: 18px;
-}
-.clearButton {
-  margin: 0 0 3px 0;
-  display: flex;
-  justify-content: space-between;
-  width: 98%;
-}
-.calculator_buttons .clearBtn,
-.calculator_buttons .backspace {
-  width: 101px;
-}
-/* WEATHER APP */
-.weather_app {
-  width: 300px;
-  height: 400px;
-}
-.tempo {
-  display: flex;
-  flex-wrap: wrap;
-}
-.cidade {
-  margin: 10px;
-  border: 2px solid black;
-  padding: 5px;
-  font-size: 17px;
-  text-align: center;
-}
-.weather_app .container {
-  text-align: center;
-}
-
-/* cep app */
-.cep_app {
-  width: 600px;
-  text-align: center;
-}
-.cep_app .titulo {
-  font-size: 18px;
-}
-.inputContainer .cepInput {
-  font-size: 18px;
-  height: 30px;
-}
-.inputContainer .adicionarBtn {
-  font-size: 18px;
-  padding: 5px;
-}
-.mensagemErro {
-  font-size: 18px;
-  color: red;
-  padding: 10px 0 10px 0;
-}
-.tabela {
-  margin: 0 auto;
-}
-/* table style */
-.tableHeadItem {
-  border: 2px solid black;
-  padding: 5px;
-  font-size: 16px;
-  font-weight: bold;
-}
-.tableContent {
-  border: 2px solid black;
-  font-size: 16px;
-  padding: 5px;
-  align-items: center;
-}
-
 /*CHANGE DISPLAY VIEW*/
 .disabled {
   display: none;

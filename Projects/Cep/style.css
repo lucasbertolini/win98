@@ -1,0 +1,37 @@
+/* cep app */
+.cep_app {
+  width: 600px;
+  text-align: center;
+}
+.cep_app .titulo {
+  font-size: 18px;
+}
+.inputContainer .cepInput {
+  font-size: 18px;
+  height: 30px;
+}
+.inputContainer .adicionarBtn {
+  font-size: 18px;
+  padding: 5px;
+}
+.mensagemErro {
+  font-size: 18px;
+  color: red;
+  padding: 10px 0 10px 0;
+}
+.tabela {
+  margin: 0 auto;
+}
+/* table style */
+.tableHeadItem {
+  border: 2px solid black;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.tableContent {
+  border: 2px solid black;
+  font-size: 16px;
+  padding: 5px;
+  align-items: center;
+}

@@ -13,13 +13,25 @@ startBtn.addEventListener('click', (event) =>{
     document.querySelector('#start_menu').classList.toggle('disabled');
 })
 
-//minimaze window
-let minimazeBtn = document.querySelector('#minimaze');
-minimazeBtn.addEventListener('click', (e) => {
-    let window = document.querySelector('#app_window');
-    window.classList.toggle('disabled');
-    addToBar(e.target.textContent);
-});
+let minimazeBtn = document.querySelectorAll('#minimaze');
+for( let i = 0; i < minimazeBtn.length; i++) {
+    minimazeBtn[i].addEventListener('click', () => {
+        let parent = minimazeBtn[i].parentElement.parentElement.parentElement.className
+        switch(parent) {
+
+            case parent.includes('calculator') :
+                console.log('ola')
+            break;
+        
+            default: 
+                console.log(parent)
+                break
+        }
+    })
+   
+   
+
+};
 
 //close window
 document.querySelector('#desktop').addEventListener('click', (e) => {
@@ -36,7 +48,7 @@ document.querySelector('#desktop').addEventListener('click', (e) => {
             break;
 
         default : 
-            console.log(e.target.id);
+            //console.log(e.target.id);
             break;
     }
 })
@@ -71,13 +83,17 @@ function closeStartMenu() {
     document.querySelector('#start_menu').classList.toggle('disabled');
 }
 
-function addToBar(nome) {
-    obejctCreate(nome);
-}
 
-function obejctCreate(nome) {
-    let appTab = document.createElement('div');
-    appTab.setAttribute('class', 'app_tab');
-    appTab.innerHTML = nome;
-    document.querySelector('#start_button').appendChild(appTab);
+function addToBar(objName) {
+    //create main div for tab to go
+    let div = document.createElement('div');
+    div.setAttribute('class', 'open_app_tab');
+    div.setAttribute('id', objName);
+    document.querySelector('#open_pages').appendChild(div);
+
+    //create the text element
+    let text = document.createElement('span');
+    text.textContent = objName;
+    div.appendChild(text);
+
 }

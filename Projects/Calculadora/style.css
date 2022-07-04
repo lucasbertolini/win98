@@ -1,0 +1,33 @@
+/* calculator */
+.calculator {
+  width: 300px;
+  height: 230px;
+}
+.calculator_window {
+  width: 266px;
+  height: 350px;
+}
+.calculadora__pricipal--mostrador {
+  width: 100%;
+  text-align: end;
+  min-height: 40px;
+  font-size: 18px;
+}
+.calculator_buttons {
+  padding: 10px 20px 0 20px;
+}
+.calculator_buttons button {
+  min-width: 50px;
+  min-height: 50px;
+  font-size: 18px;
+}
+.clearButton {
+  margin: 0 0 3px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+}
+.calculator_buttons .clearBtn,
+.calculator_buttons .backspace {
+  width: 101px;
+}
