@@ -9,7 +9,7 @@ desktopClick.addEventListener('click', (e) => {
 
 //click on start menu button to show hidden menu 
 let startBtn = document.querySelector('#start_btn');
-startBtn.addEventListener('click', (event) =>{
+startBtn.addEventListener('click', () =>{
     document.querySelector('#start_menu').classList.toggle('disabled');
 })
 
@@ -29,9 +29,6 @@ for( let i = 0; i < minimazeBtn.length; i++) {
                 break
         }
     })
-   
-   
-
 };
 
 //close window
@@ -52,7 +49,7 @@ document.querySelector('#desktop').addEventListener('click', (e) => {
             //console.log(e.target.id);
             break;
     }
-})
+});
 
 //start menu click
 let start_menu_button = document.querySelector('#start_menu');
@@ -83,7 +80,6 @@ start_menu_button.addEventListener('click', (e) => {
 function closeStartMenu() {
     document.querySelector('#start_menu').classList.toggle('disabled');
 }
-
 
 function addToBar(objName) {
     //create main div for tab to go

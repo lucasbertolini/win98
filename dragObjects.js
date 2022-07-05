@@ -52,3 +52,16 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+
+document.querySelector('#desktop').addEventListener('click', (e) => {
+
+  switch (e.target.id) {
+    case 'calculator_tab':
+      console.log(e.target);      
+      
+      break;
+  
+    default:
+      break;
+  }
+});
