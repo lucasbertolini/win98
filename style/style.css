@@ -155,12 +155,6 @@
   font-weight: bold;
 }
 
-/* App window*/
-.app_window {
-  width: 80%;
-  height: 80%;
-  margin: 0 auto;
-}
 /*CHANGE DISPLAY VIEW*/
 .disabled {
   display: none;
