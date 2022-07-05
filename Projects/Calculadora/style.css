@@ -32,3 +32,7 @@
 .calculator_buttons .backspace {
   width: 101px;
 }
+#calculadora__principal--mostrador {
+  background-color: #fff;
+  color: black;
+}
