@@ -163,3 +163,6 @@
 .enable {
   display: block;
 }
+.minimized {
+  box-shadow: 3px 3px 2px 0px #000000, -3px -3px 2px 0px #ffffff;
+}
