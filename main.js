@@ -20,14 +20,17 @@ for( let i = 0; i < minimazeBtn.length; i++) {
         switch(event.target.id){
             case 'minimaze_calculator' :
                 document.querySelector('#app_window_calculator').classList.remove('enable');
+                document.querySelector('#Calculator').classList.add('minimized');
             break; 
             
             case 'minimaze_weather' : 
             document.querySelector('#app_window_weather').classList.remove('enable');
+            document.querySelector('#Weather').classList.add('minimized');
             break;
 
             case 'minimaze_cep': 
             document.querySelector('#app_window_cep').classList.remove('enable');
+            document.querySelector('#CEP_Search').classList.add('minimized');
             break;
         }
     })
@@ -50,9 +53,6 @@ document.querySelector('#desktop').addEventListener('click', (e) => {
             document.querySelector('#open_pages').removeChild(document.querySelector('#CEP_Search'));
             break;
 
-        default : 
-            //console.log(e.target.id);
-            break;
     }
 });
 
@@ -101,12 +101,15 @@ function refresh (name) {
             switch (e.target.textContent) {
                 case 'Calculator':
                     document.querySelector('#app_window_calculator').classList.add('enable');
+                    document.querySelector('#Calculator').classList.remove('minimized');
                     break;
                 case 'CEP Search' :
                     document.querySelector('#app_window_cep').classList.add('enable');
+                    document.querySelector('#CEP_Search').classList.remove('minimized');
                     break;
                 case 'Weather' :
                     document.querySelector('#app_window_weather').classList.add('enable');
+                    document.querySelector('#Weather').classList.remove('minimized');
                     break;
             }
         })
