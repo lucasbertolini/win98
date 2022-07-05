@@ -13,19 +13,26 @@ startBtn.addEventListener('click', () =>{
     document.querySelector('#start_menu').classList.toggle('disabled');
 })
 
-let minimazeBtn = document.querySelectorAll('#minimaze');
+let minimazeBtn = document.querySelectorAll('#window');
+console.log(minimazeBtn)
 for( let i = 0; i < minimazeBtn.length; i++) {
-    minimazeBtn[i].addEventListener('click', () => {
-        
-        let parent = minimazeBtn[i].parentElement.parentElement.parentElement.className
-        switch(parent) {
+    minimazeBtn[i].addEventListener('click', (event) => {
 
-            case parent.includes('calculator') :
-                console.log('ola')
+        switch(event.target.id){
+            case 'minimaze_calculator' :
+                document.querySelector('#app_window_calculator').classList.remove('enable');
+            break; 
+            
+            case 'minimaze_weather' : 
+            document.querySelector('#app_window_weather').classList.remove('enable');
+            break;
+
+            case 'minimaze_cep': 
+            document.querySelector('#app_window_cep').classList.remove('enable');
             break;
         
             default: 
-                console.log(parent)
+                console.log(parent.includes('calculator'))
                 break
         }
     })
@@ -56,26 +63,59 @@ let start_menu_button = document.querySelector('#start_menu');
 start_menu_button.addEventListener('click', (e) => {
 
     //switch for each button inside start menu
+    let objectName;
     switch (e.target.id) {
         case 'start_menu_weather':
-
+            objectName = 'Weather'
             document.querySelector('#app_window_weather').classList.add('enable');
             closeStartMenu();
+            addToBar(objectName);
+            refresh(objectName);
             break;
         case 'start_menu_calculator':
+            objectName = 'Calculator'
             document.querySelector('#app_window_calculator').classList.add('enable');
             closeStartMenu();
+            addToBar(objectName);
+            refresh(objectName);
             break
 
         case 'start_menu_cep_search':
+            objectName = 'CEP Search';
             document.querySelector('#app_window_cep').classList.add('enable');
             closeStartMenu();
+            addToBar(objectName);
+            refresh(objectName);
             break;
         default:
             closeStartMenu();
             break;
     }
 });
+
+//refresh function for updates on page
+function refresh (name) {
+    //Click on Minimized to maximize
+    let openTab = document.querySelector(`#${name}`);
+    if(openTab == null ) return
+    console.log(openTab.textContent);
+    for( let i = 0; i < openTab.length; i++) {
+        openTab[i].addEventListener('click', (e) => {
+            switch (e.target.textContent) {
+                case 'Calculator':
+                    document.querySelector('#app_window_calculator').classList.add('enable');
+                    break;
+                case 'CEP Search' :
+                    document.querySelector('#app_window_cep').classList.add('enable');
+                    break;
+                case 'Weather' :
+                    document.querySelector('#app_window_weather').classList.add('enable');
+                    break;
+            }
+        })
+    }
+}
+
 
 function closeStartMenu() {
     document.querySelector('#start_menu').classList.toggle('disabled');

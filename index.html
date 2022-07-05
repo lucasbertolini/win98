@@ -29,7 +29,7 @@
             <div class="title-bar" id="calculator_tab ">
               <div class="title-bar-text">Calculadora</div>
               <div class="title-bar-controls">
-                <button aria-label="Minimize" id="minimaze"></button>
+                <button aria-label="Minimize" id="minimaze_calculator"></button>
                 <button aria-label="Maximize"></button>
                 <button aria-label="Close" id="close_app_window_calculator"></button>
               </div>
@@ -67,11 +67,11 @@
         </div>
         <!-- Weather app -->
         <div class="weather_app disabled" id="app_window_weather">
-          <div class="window">
+          <div class="window" id="window">
             <div class="title-bar">
               <div class="title-bar-text">Weather App</div>
               <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
+                <button aria-label="Minimize" id="minimaze_weather"></button>
                 <button aria-label="Maximize"></button>
                 <button aria-label="Close" id="close_weather"></button>
               </div>
@@ -89,11 +89,11 @@
         </div>
         <!--cep search app-->
         <div class="cep_app disabled" id="app_window_cep">
-          <div class="window cep" >
+          <div class="window cep" id="window">
             <div class="title-bar">
               <div class="title-bar-text">CEP Search App</div>
               <div class="title-bar-controls">
-                <button aria-label="Minimize" id="minimaze"></button>
+                <button aria-label="Minimize" id="minimaze_cep"></button>
                 <button aria-label="Maximize"></button>
                 <button aria-label="Close" id="close_cep"></button>
               </div>
@@ -149,9 +149,11 @@
       
       <div class="space"></div>
       <div class="open_pages" id="open_pages">
+        <!-- example for open tab 
         <div class="open_app_tab">
           <span>Calculator</span>
         </div>
+        -->
       </div>
       <div class="credit ">
         <span>Desenvolvido por</span><br>

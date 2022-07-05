@@ -57,7 +57,7 @@ document.querySelector('#desktop').addEventListener('click', (e) => {
 
   switch (e.target.id) {
     case 'calculator_tab':
-      console.log(e.target);      
+        console.log(e.target);      
       
       break;
   
