@@ -29,10 +29,6 @@ for( let i = 0; i < minimazeBtn.length; i++) {
             case 'minimaze_cep': 
             document.querySelector('#app_window_cep').classList.remove('enable');
             break;
-        
-            default: 
-                console.log(parent.includes('calculator'))
-                break
         }
     })
 };
@@ -42,13 +38,16 @@ document.querySelector('#desktop').addEventListener('click', (e) => {
 
     switch (e.target.id) {
         case 'close_app_window_calculator':
-            document.querySelector('#app_window_calculator').classList.remove('enable');    
+            document.querySelector('#app_window_calculator').classList.remove('enable'); 
+            document.querySelector('#open_pages').removeChild(document.querySelector('#Calculator'));
             break;
         case 'close_weather' :
             document.querySelector('#app_window_weather').classList.remove('enable');
+            document.querySelector('#open_pages').removeChild(document.querySelector('#Weather'));
             break;
         case 'close_cep' :
             document.querySelector('#app_window_cep').classList.remove('enable');
+            document.querySelector('#open_pages').removeChild(document.querySelector('#CEP_Search'));
             break;
 
         default : 
@@ -80,7 +79,7 @@ start_menu_button.addEventListener('click', (e) => {
             break
 
         case 'start_menu_cep_search':
-            objectName = 'CEP Search';
+            objectName = 'CEP_Search';
             document.querySelector('#app_window_cep').classList.add('enable');
             closeStartMenu();
             addToBar(objectName);
@@ -97,7 +96,7 @@ function refresh (name) {
     //Click on Minimized to maximize
     let openTab = document.querySelector(`#${name}`);
     if(openTab == null ) return
-    console.log(openTab);
+
         openTab.addEventListener('click', (e) => {
             switch (e.target.textContent) {
                 case 'Calculator':
@@ -113,8 +112,6 @@ function refresh (name) {
         })
     }
 
-
-
 function closeStartMenu() {
     document.querySelector('#start_menu').classList.toggle('disabled');
 }
@@ -128,7 +125,11 @@ function addToBar(objName) {
 
     //create the text element
     let text = document.createElement('span');
-    text.textContent = objName;
+    text.textContent = objName.replace('_', ' ');
     div.appendChild(text);
 
+}
+
+function remove() {
+     
 }
