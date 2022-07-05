@@ -16,6 +16,7 @@ startBtn.addEventListener('click', (event) =>{
 let minimazeBtn = document.querySelectorAll('#minimaze');
 for( let i = 0; i < minimazeBtn.length; i++) {
     minimazeBtn[i].addEventListener('click', () => {
+        
         let parent = minimazeBtn[i].parentElement.parentElement.parentElement.className
         switch(parent) {
 

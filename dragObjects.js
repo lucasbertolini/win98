@@ -3,7 +3,8 @@ let appWindow = [
     'app_window_calculator', 
     'app_window_weather', 
     'app_window_cep'
-]
+];
+let front = false;
 for (let i = 0; i < appWindow.length; i++) {
     dragElement(document.getElementById(appWindow[i]));
 }
@@ -42,6 +43,7 @@ function dragElement(elmnt) {
     // set the element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+
   }
 
   function closeDragElement() {
