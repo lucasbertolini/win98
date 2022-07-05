@@ -14,7 +14,6 @@ startBtn.addEventListener('click', () =>{
 })
 
 let minimazeBtn = document.querySelectorAll('#window');
-console.log(minimazeBtn)
 for( let i = 0; i < minimazeBtn.length; i++) {
     minimazeBtn[i].addEventListener('click', (event) => {
 
@@ -98,9 +97,8 @@ function refresh (name) {
     //Click on Minimized to maximize
     let openTab = document.querySelector(`#${name}`);
     if(openTab == null ) return
-    console.log(openTab.textContent);
-    for( let i = 0; i < openTab.length; i++) {
-        openTab[i].addEventListener('click', (e) => {
+    console.log(openTab);
+        openTab.addEventListener('click', (e) => {
             switch (e.target.textContent) {
                 case 'Calculator':
                     document.querySelector('#app_window_calculator').classList.add('enable');
@@ -114,7 +112,7 @@ function refresh (name) {
             }
         })
     }
-}
+
 
 
 function closeStartMenu() {
