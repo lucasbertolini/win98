@@ -92,6 +92,7 @@ start_menu_button.addEventListener('click', (e) => {
 });
 
 //refresh function for updates on page
+let minimized = false;
 function refresh (name) {
     //Click on Minimized to maximize
     let openTab = document.querySelector(`#${name}`);
@@ -100,16 +101,37 @@ function refresh (name) {
         openTab.addEventListener('click', (e) => {
             switch (e.target.textContent) {
                 case 'Calculator':
-                    document.querySelector('#app_window_calculator').classList.add('enable');
-                    document.querySelector('#Calculator').classList.remove('minimized');
+                    document.querySelector('#app_window_calculator').classList.toggle('enable');
+                    //when cliked on minimized tab at bottom you can maximize the window
+                    if(!minimized) {
+                        document.querySelector('#Calculator').classList.toggle('minimized');
+                        minimized = true;
+                    }else {
+                        document.querySelector('#Calculator').classList.toggle('minimized');
+                    }
+                    minimized = true;
                     break;
                 case 'CEP Search' :
-                    document.querySelector('#app_window_cep').classList.add('enable');
-                    document.querySelector('#CEP_Search').classList.remove('minimized');
+                    document.querySelector('#app_window_cep').classList.toggle('enable');
+                    //when cliked on minimized tab at bottom you can maximize the window
+                    if(!minimized) {
+                        document.querySelector('#CEP_Search').classList.toggle('minimized');
+                        minimized = true;
+                    }else {
+                        document.querySelector('#CEP_Search').classList.toggle('minimized');
+                    }
+                    minimized = true;
                     break;
                 case 'Weather' :
-                    document.querySelector('#app_window_weather').classList.add('enable');
-                    document.querySelector('#Weather').classList.remove('minimized');
+                    document.querySelector('#app_window_weather').classList.toggle('enable');
+                    //when cliked on minimized tab at bottom you can maximize the window
+                    if(!minimized) {
+                        document.querySelector('#CEP_Search').classList.toggle('minimized');   
+                        minimized = true;
+                    }else {
+                        document.querySelector('#CEP_Search').classList.toggle('minimized');
+                    }
+                    minimized = true;                    
                     break;
             }
         })
