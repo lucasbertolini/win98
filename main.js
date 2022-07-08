@@ -24,14 +24,19 @@ for( let i = 0; i < minimazeBtn.length; i++) {
             break; 
             
             case 'minimaze_weather' : 
-            document.querySelector('#app_window_weather').classList.remove('enable');
-            document.querySelector('#Weather').classList.add('minimized');
-            break;
+                document.querySelector('#app_window_weather').classList.remove('enable');
+                document.querySelector('#Weather').classList.add('minimized');
+                break;
 
             case 'minimaze_cep': 
-            document.querySelector('#app_window_cep').classList.remove('enable');
-            document.querySelector('#CEP_Search').classList.add('minimized');
-            break;
+                document.querySelector('#app_window_cep').classList.remove('enable');
+                document.querySelector('#CEP_Search').classList.add('minimized');
+                break;
+            
+            case 'minimize-credict' : 
+                document.querySelector('#app_window_credict').classList.remove('enable');
+                document.querySelector('#Credict').classList.add('minimized');
+                break;
         }
     })
 };
@@ -51,6 +56,11 @@ document.querySelector('#desktop').addEventListener('click', (e) => {
         case 'close_cep' :
             document.querySelector('#app_window_cep').classList.remove('enable');
             document.querySelector('#open_pages').removeChild(document.querySelector('#CEP_Search'));
+            break;
+        
+        case 'close_credict' : 
+            document.querySelector('#app_window_credict').classList.remove('enable');
+            document.querySelector('#open_pages').removeChild(document.querySelector('#Credict'));
             break;
 
     }
@@ -81,6 +91,14 @@ start_menu_button.addEventListener('click', (e) => {
         case 'start_menu_cep_search':
             objectName = 'CEP_Search';
             document.querySelector('#app_window_cep').classList.add('enable');
+            closeStartMenu();
+            addToBar(objectName);
+            refresh(objectName);
+            break;
+
+        case 'start_menu_credict': 
+            objectName = 'Credict';
+            document.querySelector('#app_window_credict').classList.add('enable');
             closeStartMenu();
             addToBar(objectName);
             refresh(objectName);
@@ -132,6 +150,18 @@ function refresh (name) {
                         document.querySelector('#CEP_Search').classList.toggle('minimized');
                     }
                     minimized = true;                    
+                    break;
+
+                case 'Credict' :
+                    document.querySelector('#app_window_credict').classList.toggle('enable');
+                    //when cliked on minimized tab at bottom you can maximize the window
+                    if(!minimized) {
+                        document.querySelector('#Credict').classList.toggle('minimized');
+                        minimized= true;
+                    }else {
+                        document.querySelector('#Credict').classList.toggle('minimized');
+                    }
+                    minimized = true;
                     break;
             }
         })
