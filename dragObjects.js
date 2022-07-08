@@ -2,7 +2,8 @@
 let appWindow = [
     'app_window_calculator', 
     'app_window_weather', 
-    'app_window_cep'
+    'app_window_cep',
+    'app_window_credict'
 ];
 let front = false;
 for (let i = 0; i < appWindow.length; i++) {
