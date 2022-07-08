@@ -159,6 +159,7 @@
 .contact {
   min-width: 50px;
   max-width: 300px;
+  position: absolute;
 }
 .contact .window-body {
   padding: 10px;
