@@ -44,7 +44,15 @@ for ( let i = 0; i < inputAttributes.submit.type.length; i++) {
     inputSubmit.setAttributeNS(inputAttributes.submit.type[i], inputAttributes.submit.value[i])
 }
 
+//error message 
 let errorMessage = document.createElement('p');
 errorMessage.setAttribute('id', 'mensagemErro');
+errorMessage.setAttribute('class', 'mensagemErro');
+form.appendChild(errorMessage);
+
+//div for results 
+createDiv('resultado', form);
+
+
 
 
