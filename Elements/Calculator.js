@@ -1,4 +1,5 @@
 import {createDiv, createWindow} from './window.js';
+import minimized from '../main.js';
 
 export default function calculator(){
 
@@ -45,4 +46,5 @@ export default function calculator(){
         button.textContent = calculatorMain[i];
         document.querySelector('#calculator_buttons').appendChild(button);
     }
+    minimized();
 }    

@@ -15,53 +15,56 @@ startBtn.addEventListener('click', () =>{
     document.querySelector('#start_menu').classList.toggle('disabled');
 })
 
-let minimazeBtn = document.querySelectorAll('#window');
-for( let i = 0; i < minimazeBtn.length; i++) {
-    minimazeBtn[i].addEventListener('click', (event) => {
+//always run this function for update the node from #window
+export default function minimize() {
+    let minimazeBtn = document.querySelectorAll('#window');
+    for( let i = 0; i < minimazeBtn.length; i++) {
+        minimazeBtn[i].addEventListener('click', (event) => {
+            switch(event.target.id){
+                case 'minimaze_calculator' :
+                    document.querySelector('#app_window_calculator').classList.add('disabled');
+                    document.querySelector('#Calculator').classList.add('minimized');
+                break; 
+                
+                case 'minimaze_weather' : 
+                    document.querySelector('#app_window_weather').classList.add('disabled');
+                    document.querySelector('#Weather').classList.add('minimized');
+                    break;
+    
+                case 'minimaze_cep': 
+                    document.querySelector('#app_window_cep').classList.add('disabled');
+                    document.querySelector('#CEP_Search').classList.add('minimized');
+                    break;
+                
+                case 'minimize-credict' : 
+                    document.querySelector('#app_window_credict').classList.add('disabled');
+                    document.querySelector('#Credict').classList.add('minimized');
+                    break;
+            }
+        })
+    };
 
-        switch(event.target.id){
-            case 'minimaze_calculator' :
-                document.querySelector('#app_window_calculator').classList.remove('enable');
-                document.querySelector('#Calculator').classList.add('minimized');
-            break; 
-            
-            case 'minimaze_weather' : 
-                document.querySelector('#app_window_weather').classList.remove('enable');
-                document.querySelector('#Weather').classList.add('minimized');
-                break;
-
-            case 'minimaze_cep': 
-                document.querySelector('#app_window_cep').classList.remove('enable');
-                document.querySelector('#CEP_Search').classList.add('minimized');
-                break;
-            
-            case 'minimize-credict' : 
-                document.querySelector('#app_window_credict').classList.remove('enable');
-                document.querySelector('#Credict').classList.add('minimized');
-                break;
-        }
-    })
-};
+}
 
 //close window
 document.querySelector('#desktop').addEventListener('click', (e) => {
 
     switch (e.target.id) {
         case 'close_app_window_calculator':
-            document.querySelector('#app_window_calculator').classList.remove('enable'); 
+            document.querySelector('#app_window_calculator').remove()
             document.querySelector('#open_pages').removeChild(document.querySelector('#Calculator'));
             break;
         case 'close_weather' :
-            document.querySelector('#app_window_weather').classList.remove('enable');
+            document.querySelector('#app_window_weather').remove();
             document.querySelector('#open_pages').removeChild(document.querySelector('#Weather'));
             break;
         case 'close_cep' :
-            document.querySelector('#app_window_cep').classList.remove('enable');
+            document.querySelector('#app_window_cep').remove();
             document.querySelector('#open_pages').removeChild(document.querySelector('#CEP_Search'));
             break;
         
         case 'close_credict' : 
-            document.querySelector('#app_window_credict').classList.remove('enable');
+            document.querySelector('#app_window_credict').remove();
             document.querySelector('#open_pages').removeChild(document.querySelector('#Credict'));
             break;
 
@@ -85,7 +88,6 @@ start_menu_button.addEventListener('click', (e) => {
         case 'start_menu_calculator':
             objectName = 'Calculator'
             calculator();
-            //document.querySelector('#app_window_calculator').classList.add('enable');
             closeStartMenu();
             addToBar(objectName);
             refresh(objectName);
@@ -123,7 +125,7 @@ function refresh (name) {
         openTab.addEventListener('click', (e) => {
             switch (e.target.textContent) {
                 case 'Calculator':
-                    document.querySelector('#app_window_calculator').classList.toggle('enable');
+                    document.querySelector('#app_window_calculator').classList.add('disabled');
                     //when cliked on minimized tab at bottom you can maximize the window
                     if(!minimized) {
                         document.querySelector('#Calculator').classList.toggle('minimized');
