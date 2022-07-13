@@ -1,3 +1,5 @@
+import calculator from './Elements/Calculator.js';
+import { cep } from './Elements/cep.js';
 let desktopClick = document.querySelector('body')
 desktopClick.addEventListener('click', (e) => {
     let startBtn = document.querySelector('#start_menu'); 
@@ -75,14 +77,15 @@ start_menu_button.addEventListener('click', (e) => {
     switch (e.target.id) {
         case 'start_menu_weather':
             objectName = 'Weather'
-            document.querySelector('#app_window_weather').classList.add('enable');
+            //document.querySelector('#app_window_weather').classList.add('enable');
             closeStartMenu();
             addToBar(objectName);
             refresh(objectName);
             break;
         case 'start_menu_calculator':
             objectName = 'Calculator'
-            document.querySelector('#app_window_calculator').classList.add('enable');
+            calculator();
+            //document.querySelector('#app_window_calculator').classList.add('enable');
             closeStartMenu();
             addToBar(objectName);
             refresh(objectName);
@@ -90,7 +93,8 @@ start_menu_button.addEventListener('click', (e) => {
 
         case 'start_menu_cep_search':
             objectName = 'CEP_Search';
-            document.querySelector('#app_window_cep').classList.add('enable');
+            //document.querySelector('#app_window_cep').classList.add('enable');
+            cep();
             closeStartMenu();
             addToBar(objectName);
             refresh(objectName);

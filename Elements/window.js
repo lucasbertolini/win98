@@ -1,11 +1,15 @@
-function createDiv(className, location, idName) {
+export function createDiv(className, location, idName) {
 
     let div = document.createElement('div');
     div.setAttribute('class', className);
-    if(!idName) {
-        idName = className
+    
+    if(idName === undefined) {
+        idName = className;
         div.setAttribute('id', idName);
+        location.appendChild(div);
+        return;
     }
+    div.setAttribute('id', idName);
     location.appendChild(div);
 }
 function createButton(location) {
@@ -16,18 +20,18 @@ function createButton(location) {
     ];
     let buttonId = [
         'minimaze_calculator',
-        '',
+        '', //not used yet
         'close_app_window_calculator'
     ];
     for(let i =0; i < buttonOptions.length; i++){
         let button = document.createElement('button');
         button.setAttribute('aria-label', buttonOptions[i]);
-        button.setAttibute('id', buttonId[i]);
+        button.setAttribute('id', buttonId[i]);
         location.appendChild(button);
     };
 };
-function createWindow(windowName, appName) {
-    let desktop = document.querySelector('#dektop')
+export function createWindow(windowName, appName) {
+    let desktop = document.querySelector('#desktop');
     createDiv(`app_window ${appName}`,desktop, `app_window_${appName}`);
     createDiv(`window ${appName}_window`, document.querySelector(`#app_window_${appName}`), 'window');
     createDiv('title-bar', document.querySelector('#window'), `${appName}_tab`);
