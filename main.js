@@ -43,7 +43,6 @@ export default function minimize() {
             }
         })
     };
-
 }
 
 //close window
@@ -67,7 +66,6 @@ document.querySelector('#desktop').addEventListener('click', (e) => {
             document.querySelector('#app_window_credict').remove();
             document.querySelector('#open_pages').removeChild(document.querySelector('#Credict'));
             break;
-
     }
 });
 
@@ -121,11 +119,10 @@ function refresh (name) {
     //Click on Minimized to maximize
     let openTab = document.querySelector(`#${name}`);
     if(openTab == null ) return
-
         openTab.addEventListener('click', (e) => {
             switch (e.target.textContent) {
                 case 'Calculator':
-                    document.querySelector('#app_window_calculator').classList.add('disabled');
+                    document.querySelector('#app_window_calculator').classList.toggle('disabled');
                     //when cliked on minimized tab at bottom you can maximize the window
                     if(!minimized) {
                         document.querySelector('#Calculator').classList.toggle('minimized');
