@@ -1,4 +1,4 @@
-import calculator from './Elements/Calculator.js';
+import calculator from './Elements/calculator.js';
 import { cep } from './Elements/cep.js';
 let desktopClick = document.querySelector('body')
 desktopClick.addEventListener('click', (e) => {
