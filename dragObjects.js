@@ -4,7 +4,7 @@ export default function dragObject() {
   let appWindow = [
       'app_window_calculator', 
       'app_window_weather_app', 
-      'app_window_cep',
+      'app_window_cep_app',
       'app_window_credict'
   ];
   let front = false;
