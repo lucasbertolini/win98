@@ -1,6 +1,10 @@
 import calculator from './Elements/calculator.js';
+import weatherApp from './Elements/weather.js';
 import { cep } from './Elements/cep.js';
-let desktopClick = document.querySelector('body')
+
+
+let desktopClick = document.querySelector('body');
+
 desktopClick.addEventListener('click', (e) => {
     let startBtn = document.querySelector('#start_menu'); 
     
@@ -26,8 +30,8 @@ export default function minimize() {
                     document.querySelector('#Calculator').classList.add('minimized');
                 break; 
                 
-                case 'minimaze_weather' : 
-                    document.querySelector('#app_window_weather').classList.add('disabled');
+                case 'minimaze_weather_app' : 
+                    document.querySelector('#app_window_weather_app').classList.add('disabled');
                     document.querySelector('#Weather').classList.add('minimized');
                     break;
     
@@ -49,12 +53,12 @@ export default function minimize() {
 document.querySelector('#desktop').addEventListener('click', (e) => {
 
     switch (e.target.id) {
-        case 'close_app_window_calculator':
+        case 'close_calculator_button':
             document.querySelector('#app_window_calculator').remove()
             document.querySelector('#open_pages').removeChild(document.querySelector('#Calculator'));
             break;
-        case 'close_weather' :
-            document.querySelector('#app_window_weather').remove();
+        case 'close_weather_app_button' :
+            document.querySelector('#app_window_weather_app').remove();
             document.querySelector('#open_pages').removeChild(document.querySelector('#Weather'));
             break;
         case 'close_cep' :
@@ -78,7 +82,7 @@ start_menu_button.addEventListener('click', (e) => {
     switch (e.target.id) {
         case 'start_menu_weather':
             objectName = 'Weather'
-            //document.querySelector('#app_window_weather').classList.add('enable');
+            weatherApp();
             closeStartMenu();
             addToBar(objectName);
             refresh(objectName);
@@ -144,13 +148,13 @@ function refresh (name) {
                     minimized = true;
                     break;
                 case 'Weather' :
-                    document.querySelector('#app_window_weather').classList.toggle('enable');
+                    document.querySelector('#app_window_weather_app').classList.toggle('disabled');
                     //when cliked on minimized tab at bottom you can maximize the window
                     if(!minimized) {
-                        document.querySelector('#CEP_Search').classList.toggle('minimized');   
+                        document.querySelector('#Weather').classList.toggle('minimized');   
                         minimized = true;
                     }else {
-                        document.querySelector('#CEP_Search').classList.toggle('minimized');
+                        document.querySelector('#Weather').classList.toggle('minimized');
                     }
                     minimized = true;                    
                     break;
@@ -181,7 +185,7 @@ function addToBar(objName) {
     div.setAttribute('id', objName);
     document.querySelector('#open_pages').appendChild(div);
 
-    //create the text element
+    //create text element
     let text = document.createElement('span');
     text.textContent = objName.replace('_', ' ');
     div.appendChild(text);
