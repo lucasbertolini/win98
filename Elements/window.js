@@ -12,16 +12,16 @@ export function createDiv(className, location, idName) {
     div.setAttribute('id', idName);
     location.appendChild(div);
 }
-function createButton(location) {
+function createButton(location , appName) {
     let buttonOptions = [
         'Minimize',
         'Maximize',
         'Close'
     ];
     let buttonId = [
-        'minimaze_calculator',
+        `minimaze_${appName}`,
         '', //not used yet
-        'close_app_window_calculator'
+        `close_${appName}_button`
     ];
     for(let i =0; i < buttonOptions.length; i++){
         let button = document.createElement('button');
@@ -38,5 +38,5 @@ export function createWindow(windowName, appName) {
     createDiv('title-bar-text', document.querySelector(`#${appName}_tab`));
     document.querySelector('#title-bar-text').innerHTML = windowName;
     createDiv('title-bar-controls', document.querySelector(`#${appName}_tab`));
-    createButton(document.querySelector('#title-bar-controls'));
+    createButton(document.querySelector('#title-bar-controls'), appName);
 };
