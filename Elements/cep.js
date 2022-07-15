@@ -1,13 +1,16 @@
+import dragObject from '../dragObjects.js';
+import minimize from '../main.js';
+import cepCode from '../Projects/Cep/main.js';
 import {createWindow, createDiv} from './window.js';
 export function cep() {
-    createWindow('cep_app', 'cep');
+    createWindow('CEP Search', 'cep_app');
     createDiv('window-body', document.querySelector('#window'));
     
     let window_body = document.querySelector('#window-body');
     
     //create section for title
     let section = document.createElement('section');
-    windows_body.appendChild(section);
+    window_body.appendChild(section);
     
     //create p element for title
     let title = document.createElement('p');
@@ -36,16 +39,16 @@ export function cep() {
         
     }
     for( let i = 0; i < inputAttributes.text.type.length; i++) {
-        inputText.setAttribute(inputAttributes.type[i], inputAttributes.values[i]);
+        inputText.setAttribute(inputAttributes.text.type[i], inputAttributes.text.values[i]);
     }
-    document.querySelector('`#inputContainer').appendChild(inputText);
+    document.querySelector('#inputContainer').appendChild(inputText);
     
     //submit input 
-    let inputSubtmit = document.createElement('input');
+    let inputSubmit = document.createElement('input');
     for ( let i = 0; i < inputAttributes.submit.type.length; i++) {
-        inputSubmit.setAttributeNS(inputAttributes.submit.type[i], inputAttributes.submit.value[i])
+        inputSubmit.setAttribute(inputAttributes.submit.type[i], inputAttributes.submit.value[i])
     }
-    
+    document.querySelector('#inputContainer').appendChild(inputSubmit);
     //error message 
     let errorMessage = document.createElement('p');
     errorMessage.setAttribute('id', 'mensagemErro');
@@ -54,4 +57,7 @@ export function cep() {
     
     //div for results 
     createDiv('resultado', form);
+    cepCode();
+    dragObject();
+    minimize();
 }    
