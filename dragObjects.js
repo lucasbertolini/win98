@@ -3,7 +3,7 @@ export default function dragObject() {
   // Make the DIV element draggable:
   let appWindow = [
       'app_window_calculator', 
-      'app_window_weather', 
+      'app_window_weather_app', 
       'app_window_cep',
       'app_window_credict'
   ];
