@@ -35,8 +35,8 @@ export default function minimize() {
                     document.querySelector('#Weather').classList.add('minimized');
                     break;
     
-                case 'minimaze_cep': 
-                    document.querySelector('#app_window_cep').classList.add('disabled');
+                case 'minimaze_cep_app': 
+                    document.querySelector('#app_window_cep_app').classList.add('disabled');
                     document.querySelector('#CEP_Search').classList.add('minimized');
                     break;
                 
@@ -61,8 +61,8 @@ document.querySelector('#desktop').addEventListener('click', (e) => {
             document.querySelector('#app_window_weather_app').remove();
             document.querySelector('#open_pages').removeChild(document.querySelector('#Weather'));
             break;
-        case 'close_cep' :
-            document.querySelector('#app_window_cep').remove();
+        case 'close_cep_app_button' :
+            document.querySelector('#app_window_cep_app').remove();
             document.querySelector('#open_pages').removeChild(document.querySelector('#CEP_Search'));
             break;
         
@@ -137,7 +137,7 @@ function refresh (name) {
                     minimized = true;
                     break;
                 case 'CEP Search' :
-                    document.querySelector('#app_window_cep').classList.toggle('enable');
+                    document.querySelector('#app_window_cep_app').classList.toggle('disabled');
                     //when cliked on minimized tab at bottom you can maximize the window
                     if(!minimized) {
                         document.querySelector('#CEP_Search').classList.toggle('minimized');
