@@ -4,9 +4,9 @@ import cepCode from '../Projects/Cep/main.js';
 import {createWindow, createDiv} from './window.js';
 export function cep() {
     createWindow('CEP Search', 'cep_app');
-    createDiv('window-body', document.querySelector('#window_cep_app'));
+    createDiv('window-body', document.querySelector('#window_cep_app'), 'window-body-cep');
     
-    let window_body = document.querySelector('#window-body');
+    let window_body = document.querySelector('#window-body-cep');
     
     //create section for title
     let section = document.createElement('section');

@@ -11,8 +11,9 @@ export default function calculator(){
     // create main tag for calculator
     let main = document.createElement('main');
     main.setAttribute('class', 'container');
+    main.setAttribute('id', 'container_calculator')
     document.querySelector('#window-body-calculator').appendChild(main);
-    createDiv('calculadora__principal', document.querySelector('.container'));
+    createDiv('calculadora__principal', document.querySelector('#container_calculator'));
     
     //create calculator input elements 
     let input = document.createElement('input');
