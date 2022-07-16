@@ -1,5 +1,6 @@
 import calculator from './Elements/calculator.js';
 import weatherApp from './Elements/weather.js';
+import creadict from './Elements/credict.js';
 import { cep } from './Elements/cep.js';
 
 
@@ -40,10 +41,11 @@ export default function minimize() {
                     document.querySelector('#CEP_Search').classList.add('minimized');
                     break;
                 
-                case 'minimize-credict' : 
+                case 'minimaze_credict': 
                     document.querySelector('#app_window_credict').classList.add('disabled');
                     document.querySelector('#Credict').classList.add('minimized');
                     break;
+                    
             }
         })
     };
@@ -66,7 +68,7 @@ document.querySelector('#desktop').addEventListener('click', (e) => {
             document.querySelector('#open_pages').removeChild(document.querySelector('#CEP_Search'));
             break;
         
-        case 'close_credict' : 
+        case 'close_credict_button' : 
             document.querySelector('#app_window_credict').remove();
             document.querySelector('#open_pages').removeChild(document.querySelector('#Credict'));
             break;
@@ -97,7 +99,6 @@ start_menu_button.addEventListener('click', (e) => {
 
         case 'start_menu_cep_search':
             objectName = 'CEP_Search';
-            //document.querySelector('#app_window_cep').classList.add('enable');
             cep();
             closeStartMenu();
             addToBar(objectName);
@@ -106,7 +107,7 @@ start_menu_button.addEventListener('click', (e) => {
 
         case 'start_menu_credict': 
             objectName = 'Credict';
-            document.querySelector('#app_window_credict').classList.add('enable');
+            creadict();
             closeStartMenu();
             addToBar(objectName);
             refresh(objectName);
@@ -160,7 +161,7 @@ function refresh (name) {
                     break;
 
                 case 'Credict' :
-                    document.querySelector('#app_window_credict').classList.toggle('enable');
+                    document.querySelector('#app_window_credict').classList.toggle('disabled');
                     //when cliked on minimized tab at bottom you can maximize the window
                     if(!minimized) {
                         document.querySelector('#Credict').classList.toggle('minimized');
