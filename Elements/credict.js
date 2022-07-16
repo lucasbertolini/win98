@@ -1,7 +1,9 @@
+import dragObject from "../dragObjects.js";
+import minimize from "../main.js";
 import { createDiv, createWindow } from "./window.js";
 
 export default function creadict() {
-    createWindow('credict', 'app_window-credict');
+    createWindow('Credict', 'credict');
     createDiv('window-body', document.querySelector('#window'));
     let window_body = document.querySelector('#window-body');
     let text = [
@@ -27,6 +29,6 @@ export default function creadict() {
     let name = document.createElement('p');
     name.innerHTML = `Coded by Lucas Bertolini ${linkedin}`
     window_body.appendChild(name);
-    
-
+    minimize();
+    dragObject();
 }
