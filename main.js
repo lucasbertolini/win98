@@ -218,7 +218,7 @@ function goUp() {
         ],
         tabName : [
             'calculator_tab',
-            'weather_app_tab',
+            'weather_app_tab_header',
             'a',
             'a'
         ],
