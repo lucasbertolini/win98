@@ -35,9 +35,9 @@ export function createWindow(windowName, appName) {
     let desktop = document.querySelector('#desktop');
     createDiv(`app_window ${appName}`,desktop, `app_window_${appName}`);
     createDiv(`window ${appName}_window`, document.querySelector(`#app_window_${appName}`), `window_${appName}`);
-    createDiv('title-bar', document.querySelector(`#window_${appName}`), `${appName}_tab`);
-    createDiv('title-bar-text', document.querySelector(`#${appName}_tab`), `title-bar-text-${appName}`);
+    createDiv('title-bar', document.querySelector(`#window_${appName}`), `${appName}_tab_header`);
+    createDiv('title-bar-text', document.querySelector(`#${appName}_tab_header`), `title-bar-text-${appName}`);
     document.querySelector(`#title-bar-text-${appName}`).innerHTML = windowName;
-    createDiv('title-bar-controls', document.querySelector(`#${appName}_tab`), `title-bar-controls-${appName}`);
+    createDiv('title-bar-controls', document.querySelector(`#${appName}_tab_header`), `title-bar-controls-${appName}`);
     createButton(document.querySelector(`#title-bar-controls-${appName}`), appName);
 };
