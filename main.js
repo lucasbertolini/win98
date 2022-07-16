@@ -57,7 +57,7 @@ export default function minimize() {
                 }
             })
         }else { 
-            console.log(`${minimizeOption[i]} not open or doesnt exist`);
+           // console.log(`${minimizeOption[i]} not open or doesnt exist`);
         }
     };
 }
@@ -99,6 +99,7 @@ start_menu_button.addEventListener('click', (e) => {
             closeStartMenu();
             addToBar(objectName);
             refresh(objectName);
+            goUp();
             break;
         case 'start_menu_calculator':
             objectName = 'Calculator'
@@ -106,6 +107,7 @@ start_menu_button.addEventListener('click', (e) => {
             closeStartMenu();
             addToBar(objectName);
             refresh(objectName);
+            goUp();
             break
 
         case 'start_menu_cep_search':
@@ -205,6 +207,41 @@ function addToBar(objName) {
 
 }
 
-function remove() {
-     
+function goUp() {
+    let windowOption = {
+
+        windowName : [
+            'app_window_calculator',
+            'app_window_weather_app',
+            'app_window_cep_app',
+            'app_window_credict'
+        ],
+        tabName : [
+            'calculator_tab',
+            'weather_app_tab',
+            'a',
+            'a'
+        ],
+        keyName: [
+            'calculator',
+            'weather',
+            'cep', 
+            'credict'
+        ]
+    }
+    for(let i = 0; i< windowOption.windowName.length; i++ ){
+        if(document.querySelector(`#${windowOption.windowName[i]}`)) {
+
+            document.querySelector(`#${windowOption.windowName[i]}`).addEventListener('click', (e) => {
+                for(let ii = 0; ii< windowOption.tabName.length; ii++ ) {
+                    if(document.querySelector(`#${windowOption.tabName[ii]}`)) {
+
+                        console.log(windowOption.tabName[i], e.target.id)
+                        document.querySelector(`#${windowOption.windowName[i]}`).classList.toggle('ztop', e.target.id === windowOption.tabName[ii]);
+                        
+                    }
+                }
+            })
+        }
+    }
 }
