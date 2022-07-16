@@ -4,7 +4,7 @@ import { createDiv, createWindow } from "./window.js";
 
 export default function creadict() {
     createWindow('Credict', 'credict');
-    createDiv('window-body', document.querySelector('#window'));
+    createDiv('window-body', document.querySelector('#window_credict'));
     let window_body = document.querySelector('#window-body');
     let text = [
         'I created this as my portfolio, hope you enjoy!!',

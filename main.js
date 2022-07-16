@@ -16,38 +16,47 @@ desktopClick.addEventListener('click', (e) => {
 
 //click on start menu button to show hidden menu 
 let startBtn = document.querySelector('#start_btn');
-startBtn.addEventListener('click', () =>{
+startBtn.addEventListener('click', () => {
     document.querySelector('#start_menu').classList.toggle('disabled');
 })
 
 //always run this function for update the node from #window
 export default function minimize() {
     let minimazeBtn = document.querySelectorAll('#window');
-    for( let i = 0; i < minimazeBtn.length; i++) {
-        minimazeBtn[i].addEventListener('click', (event) => {
-            switch(event.target.id){
-                case 'minimaze_calculator' :
-                    document.querySelector('#app_window_calculator').classList.add('disabled');
-                    document.querySelector('#Calculator').classList.add('minimized');
-                break; 
-                
-                case 'minimaze_weather_app' : 
-                    document.querySelector('#app_window_weather_app').classList.add('disabled');
-                    document.querySelector('#Weather').classList.add('minimized');
-                    break;
-    
-                case 'minimaze_cep_app': 
-                    document.querySelector('#app_window_cep_app').classList.add('disabled');
-                    document.querySelector('#CEP_Search').classList.add('minimized');
-                    break;
-                
-                case 'minimaze_credict': 
-                    document.querySelector('#app_window_credict').classList.add('disabled');
-                    document.querySelector('#Credict').classList.add('minimized');
-                    break;
+    let minimizeOption = [
+        'window_weather_app',
+        'window_calculator_app',
+    ];
+
+    for( let i = 0; i < minimizeOption.length; i++) {
+        if(document.querySelector(`#${minimizeOption[i]}`)) {
+            
+            document.querySelector(`#${minimizeOption[i]}` ).addEventListener('click', (event) => {
+                switch(event.target.id){
+                    case 'minimaze_calculator' :
+                        document.querySelector('#app_window_calculator').classList.add('disabled');
+                        document.querySelector('#Calculator').classList.add('minimized');
+                        break; 
                     
-            }
-        })
+                    case 'minimaze_weather_app' : 
+                        document.querySelector('#app_window_weather_app').classList.add('disabled');
+                        document.querySelector('#Weather').classList.add('minimized');
+                        break;
+        
+                    case 'minimaze_cep_app': 
+                        document.querySelector('#app_window_cep_app').classList.add('disabled');
+                        document.querySelector('#CEP_Search').classList.add('minimized');
+                        break;
+                    
+                    case 'minimaze_credict': 
+                        document.querySelector('#app_window_credict').classList.add('disabled');
+                        document.querySelector('#Credict').classList.add('minimized');
+                        break;     
+                }
+            })
+        }else { 
+            console.log(`${minimizeOption[i]} not open or doesnt exist`);
+        }
     };
 }
 
@@ -55,7 +64,7 @@ export default function minimize() {
 document.querySelector('#desktop').addEventListener('click', (e) => {
 
     switch (e.target.id) {
-        case 'close_calculator_button':
+        case 'close_calculator_button' :
             document.querySelector('#app_window_calculator').remove()
             document.querySelector('#open_pages').removeChild(document.querySelector('#Calculator'));
             break;
@@ -112,6 +121,7 @@ start_menu_button.addEventListener('click', (e) => {
             addToBar(objectName);
             refresh(objectName);
             break;
+            
         default:
             closeStartMenu();
             break;

@@ -6,12 +6,14 @@ import minimized from '../main.js';
 export default function calculator(){
 
     createWindow('Calculator', 'calculator');
-    createDiv('window-body', document.querySelector('#window'));
+    createDiv('window-body-calculator', document.querySelector('#window_calculator'));
+
     // create main tag for calculator
     let main = document.createElement('main');
     main.setAttribute('class', 'container');
-    document.querySelector('#window-body').appendChild(main);
+    document.querySelector('#window-body-calculator').appendChild(main);
     createDiv('calculadora__principal', document.querySelector('.container'));
+    
     //create calculator input elements 
     let input = document.createElement('input');
     input.setAttribute('type', 'text');

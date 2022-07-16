@@ -20,7 +20,7 @@ function createButton(location , appName) {
     ];
     let buttonId = [
         `minimaze_${appName}`,
-        '', //not used yet
+        '', //maximize button not used yet
         `close_${appName}_button`
     ];
     for(let i =0; i < buttonOptions.length; i++){
@@ -30,13 +30,14 @@ function createButton(location , appName) {
         location.appendChild(button);
     };
 };
+//create default windows window for apps 
 export function createWindow(windowName, appName) {
     let desktop = document.querySelector('#desktop');
     createDiv(`app_window ${appName}`,desktop, `app_window_${appName}`);
-    createDiv(`window ${appName}_window`, document.querySelector(`#app_window_${appName}`), 'window');
-    createDiv('title-bar', document.querySelector('#window'), `${appName}_tab`);
-    createDiv('title-bar-text', document.querySelector(`#${appName}_tab`));
-    document.querySelector('#title-bar-text').innerHTML = windowName;
-    createDiv('title-bar-controls', document.querySelector(`#${appName}_tab`));
-    createButton(document.querySelector('#title-bar-controls'), appName);
+    createDiv(`window ${appName}_window`, document.querySelector(`#app_window_${appName}`), `window_${appName}`);
+    createDiv('title-bar', document.querySelector(`#window_${appName}`), `${appName}_tab`);
+    createDiv('title-bar-text', document.querySelector(`#${appName}_tab`), `title-bar-text-${appName}`);
+    document.querySelector(`#title-bar-text-${appName}`).innerHTML = windowName;
+    createDiv('title-bar-controls', document.querySelector(`#${appName}_tab`), `title-bar-controls-${appName}`);
+    createButton(document.querySelector(`#title-bar-controls-${appName}`), appName);
 };

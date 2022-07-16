@@ -5,8 +5,8 @@ import minimize from '../main.js';
 export default function weatherApp() {
 
     createWindow('Weather', 'weather_app');
-    createDiv('window-body', document.querySelector('#window'));
-    let window_body = document.querySelector('#window-body');
+    createDiv('window-body-weather', document.querySelector('#window_weather_app'));
+    let window_body = document.querySelector('#window-body-weather');
     
     //create form for weather app
     let form = document.createElement('form');
