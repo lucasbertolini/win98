@@ -1,0 +1,14 @@
+/* Contact */
+.credict {
+  min-width: 50px;
+  max-width: 300px;
+  position: absolute;
+}
+.contact .window-body {
+  padding: 10px;
+  font-size: 15px;
+  line-height: 1.2rem;
+}
+.contact-name {
+  margin-top: 5px;
+}
