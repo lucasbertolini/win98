@@ -231,11 +231,10 @@ function goUp() {
     }
     for(let i = 0; i< windowOption.windowName.length; i++ ){
         if(document.querySelector(`#${windowOption.windowName[i]}`)) {
-
             document.querySelector(`#${windowOption.windowName[i]}`).addEventListener('click', (e) => {
                 for(let ii = 0; ii< windowOption.tabName.length; ii++ ) {
                     if(document.querySelector(`#${windowOption.tabName[ii]}`)) {
-
+                        
                         console.log(windowOption.tabName[i], e.target.id)
                         document.querySelector(`#${windowOption.windowName[i]}`).classList.toggle('ztop', e.target.id === windowOption.tabName[ii]);
                         
