@@ -1,6 +1,7 @@
 @import url("../Projects/Cep/style.css");
 @import url("../Projects/Calculadora/style.css");
 @import url("../Projects/Tempo/style.css");
+@import url("../Projects/credict/style.css");
 
 :root {
   --grey: #808080;
@@ -154,20 +155,6 @@
 .arrow_right {
   margin-left: 60%;
   font-weight: bold;
-}
-/* Contact */
-.contact {
-  min-width: 50px;
-  max-width: 300px;
-  position: absolute;
-}
-.contact .window-body {
-  padding: 10px;
-  font-size: 15px;
-  line-height: 1.2rem;
-}
-.contact-name {
-  margin-top: 5px;
 }
 
 /*CHANGE DISPLAY VIEW*/
