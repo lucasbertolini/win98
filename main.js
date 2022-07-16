@@ -22,10 +22,12 @@ startBtn.addEventListener('click', () => {
 
 //always run this function for update the node from #window
 export default function minimize() {
-    let minimazeBtn = document.querySelectorAll('#window');
     let minimizeOption = [
         'window_weather_app',
-        'window_calculator_app',
+        'window_calculator',
+        'window_credict',
+        'window_cep_app'
+
     ];
 
     for( let i = 0; i < minimizeOption.length; i++) {
