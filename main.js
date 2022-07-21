@@ -1,7 +1,7 @@
 import calculator from './Elements/calculator.js';
 import weatherApp from './Elements/weather.js';
 import creadict from './Elements/credict.js';
-import { cep } from './Elements/cep.js';
+import cep  from './Elements/cep.js';
 
 
 let desktopClick = document.querySelector('body');
