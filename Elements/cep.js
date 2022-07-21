@@ -2,7 +2,7 @@ import dragObject from '../dragObjects.js';
 import minimize from '../main.js';
 import cepCode from '../Projects/Cep/main.js';
 import {createWindow, createDiv} from './window.js';
-export function cep() {
+export default  function cep() {
     createWindow('CEP Search', 'cep_app');
     createDiv('window-body', document.querySelector('#window_cep_app'), 'window-body-cep');
     
