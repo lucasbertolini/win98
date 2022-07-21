@@ -11,11 +11,11 @@ export default function calculatorRun() {
     var subtrair = false;
     var multiplicar = false;
     var dividir = false;
-    exibeValor.innerHTML = '0';
+
     
     calculadora.addEventListener('click', (evento) =>{
         const valorSelecionado = evento.target.textContent;
-    
+
         //não deixa clicar no campo de resultado
         if(evento.target.id == 'calculadora__principal--mostrador'){ 
             return
@@ -51,12 +51,13 @@ export default function calculatorRun() {
         }else if(valorSelecionado == 'C'){ //para zerar o calculadora
             valorAntigo = 0;
             valorAtual = 0;
-            exibeValor.value = '';
+            exibeValor.value = '0';
             ponto = false;
             return;
     
         }else if(valorSelecionado == 'Backspace'){
             if(valorAtual == '') return 
+            //transforma em string para trabalhar com os numeros 
             let valorString = exibeValor.value.toString();
     
             if(valorString.length == 1) {
@@ -73,6 +74,7 @@ export default function calculatorRun() {
             for (let i = 0; i < valor.length ; i++) {
                 stringFinal +=  valor[i];
             }
+            //exibe na tela alterando para numero de volta
             exibeValor.value = parseFloat(stringFinal);
             return  
             
@@ -118,12 +120,16 @@ export default function calculatorRun() {
         }
         //condição para o backspace não retornar NaN
         valorAtual = parseFloat(valorSelecionado);
+        if(exibeValor.value == '0' && exibeValor.value.length == 1) {
+            exibeValor.value = '';
+        }
+        console.log(exibeValor.value.length)
         exibeValor.value += valorAtual; 
         valorAtual = parseFloat(exibeValor.value);
 
        //console.log(`valor atual ${valorAtual} \nvalor antigo ${valorAntigo} \nResultado ${exibeValor.textContent}`);
-        
-    
     })
+    //quando inicar a calculadora exibir o valor 0 
+    exibeValor.value = '0';
 
 }    
