@@ -2,8 +2,6 @@ export default function calculatorRun() {
     
     const calculadora = document.querySelector('#calculadora__principal');
     const exibeValor = document.querySelector('#calculadora__principal--mostrador');
-    const bkspace = document.querySelector('#backspace');
-    
     
     //variavéis para operação
     let valorAtual = 0;
@@ -13,6 +11,7 @@ export default function calculatorRun() {
     var subtrair = false;
     var multiplicar = false;
     var dividir = false;
+    exibeValor.innerHTML = '0';
     
     calculadora.addEventListener('click', (evento) =>{
         const valorSelecionado = evento.target.textContent;
