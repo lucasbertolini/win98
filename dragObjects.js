@@ -9,7 +9,7 @@ export default function dragObject() {
   ];
   let front = false;
   for (let i = 0; i < appWindow.length; i++) {
-    //if window isnt exist continue the loop
+    //if window dont exist continue the loop
     if(!document.getElementById(appWindow[i])) {
       continue
     }

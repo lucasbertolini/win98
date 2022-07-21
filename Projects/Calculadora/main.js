@@ -15,7 +15,6 @@ export default function calculatorRun() {
     
     calculadora.addEventListener('click', (evento) =>{
         const valorSelecionado = evento.target.textContent;
-        
     
         //não deixa clicar no campo de resultado
         if(evento.target.id == 'calculadora__principal--mostrador'){ 
@@ -121,11 +120,8 @@ export default function calculatorRun() {
         valorAtual = parseFloat(valorSelecionado);
         exibeValor.value += valorAtual; 
         valorAtual = parseFloat(exibeValor.value);
-    
-    
-    
-       
-       console.log(`valor atual ${valorAtual} \nvalor antigo ${valorAntigo} \nResultado ${exibeValor.textContent}`);
+
+       //console.log(`valor atual ${valorAtual} \nvalor antigo ${valorAntigo} \nResultado ${exibeValor.textContent}`);
         
     
     })
