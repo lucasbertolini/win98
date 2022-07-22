@@ -46,7 +46,7 @@
 
 /* Explorer Bar */
 .explorer_bar {
-  height: 6vh;
+  height: 45px;
   background-color: silver;
   box-sizing: border-box;
   padding: 5px;
@@ -57,7 +57,7 @@
 }
 .win_button {
   width: 100px;
-  height: 5vh;
+  height: 35px;
   display: flex;
   align-items: center;
 }
@@ -119,11 +119,11 @@
 /* Start menu */
 .start_menu {
   background-color: silver;
-  position: absolute;
+  position: relative;
   height: 300px;
   width: 200px;
-  bottom: 42px;
-  left: 0px;
+  bottom: 310px;
+  right: 114px;
   display: flex;
   padding: 0 0 4px 4px;
   box-shadow: 7px -4px 8px -2px rgba(0, 0, 0, 0.67),
