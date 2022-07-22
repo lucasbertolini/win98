@@ -109,9 +109,11 @@
   min-width: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   font-size: 11px;
+  padding: 4px 0 5px 0;
+  box-sizing: border-box;
+  row-gap: 4px;
 }
 
 /* Start menu */
