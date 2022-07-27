@@ -7,7 +7,6 @@ export default function dragObject() {
       'app_window_cep_app',
       'app_window_credict'
   ];
-  let front = false;
   for (let i = 0; i < appWindow.length; i++) {
     //if window dont exist continue the loop
     if(!document.getElementById(appWindow[i])) {
@@ -27,7 +26,6 @@ export default function dragObject() {
     }
   
     function dragMouseDown(e) {
-      e = e || window.event;
       e.preventDefault();
       // get the mouse cursor position at startup:
       pos3 = e.clientX;
@@ -38,7 +36,6 @@ export default function dragObject() {
     }
   
     function elementDrag(e) {
-      e = e || window.event;
       e.preventDefault();
       // calculate the new cursor position:
       pos1 = pos3 - e.clientX;
